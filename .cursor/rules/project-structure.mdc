@@ -1,0 +1,31 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# 웹 프레임워크 라이브러리 프로젝트 구조
+
+이 프로젝트는 Go를 사용하여 재사용 가능한 웹 프레임워크 라이브러리를 구현합니다.
+
+## 주요 파일 및 디렉토리 (루트)
+- `engine.go`: 프레임워크 핵심 엔진 ([engine.go](mdc:engine.go))
+- `context.go`: 요청/응답 컨텍스트 ([context.go](mdc:context.go))
+- `router.go`: 라우팅 로직 ([router.go](mdc:router.go))
+- `group.go`: 라우트 그룹핑 ([group.go](mdc:group.go))
+- `middleware.go`: 기본 미들웨어 인터페이스 ([middleware.go](mdc:middleware.go))
+- `middleware/`: 선택적 미들웨어 패키지 디렉토리 ([middleware/](mdc:middleware))
+  - `logger/logger.go`: 로깅 미들웨어 ([middleware/logger/logger.go](mdc:middleware/logger/logger.go))
+  - `recovery/recovery.go`: 패닉 복구 미들웨어 ([middleware/recovery/recovery.go](mdc:middleware/recovery/recovery.go))
+- `internal/`: 프레임워크 내부 구현 코드 ([internal/](mdc:internal))
+  - `tree/`: 라우팅 트리 등 내부 자료구조 ([internal/tree/](mdc:internal/tree))
+  - `utils/`: 내부 유틸리티 ([internal/utils/](mdc:internal/utils))
+- `examples/`: 프레임워크 사용 예제 디렉토리 ([examples/](mdc:examples))
+  - `basic-server/main.go`: 기본 서버 예제 ([examples/basic-server/main.go](mdc:examples/basic-server/main.go))
+- `go.mod`: Go 모듈 정의 파일 ([go.mod](mdc:go.mod))
+- `README.md`: 프로젝트 설명 및 사용법 ([README.md](mdc:README.md))
+
+## 프로젝트 목표
+- 사용자가 자신의 애플리케이션에 쉽게 통합할 수 있는 유연하고 확장 가능한 웹 프레임워크 제공
+- 명확한 API와 잘 정의된 핵심 구성 요소(엔진, 컨텍스트, 라우터, 미들웨어)
+- 재사용 가능한 미들웨어 지원
+- 상세한 예제를 통한 사용 편의성 증대
